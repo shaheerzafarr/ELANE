@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — ÈLANÈ Premium Fragrances</title>
+    <meta name="description"
+        content="Get in touch with ÈLANÈ. For orders, inquiries, and collaborations — reach out to our team.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-line"></div>
+            <span class="preloader-text">ÈLANÈ</span>
+            <div class="preloader-line"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="mainNav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">ÈLANÈ</a>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="collection.html" class="nav-link">COLLECTION</a>
+                <a href="about.html" class="nav-link">OUR STORY</a>
+                <a href="contact.html" class="nav-link active">CONTACT</a>
+            </div>
+            <div class="nav-actions">
+                <a href="collection.html" class="nav-cta">SHOP NOW</a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <span class="section-label">WE'D LOVE TO HEAR FROM YOU</span>
+        <h1 class="section-title">Get in Touch</h1>
+        <div class="title-underline"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper reveal-left">
+                    <span class="section-label">SEND A MESSAGE</span>
+                    <h2 class="contact-form-title">We're Here For You</h2>
+                    <div class="title-underline align-left"></div>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" class="form-label">FIRST NAME</label>
+                                <input type="text" id="firstName" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" class="form-label">LAST NAME</label>
+                                <input type="text" id="lastName" class="form-input" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">EMAIL</label>
+                            <input type="email" id="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">SUBJECT</label>
+                            <select id="subject" class="form-input form-select">
+                                <option value="">Select a topic</option>
+                                <option value="order">Place an Order</option>
+                                <option value="inquiry">Product Inquiry</option>
+                                <option value="wholesale">Wholesale & Partnerships</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">MESSAGE</label>
+                            <textarea id="message" class="form-input form-textarea" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-gold" id="submitBtn">SEND MESSAGE</button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-wrapper reveal-right">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title">Email</h3>
+                            <p class="info-value">info@elane.com</p>
+                            <p class="info-value">orders@elane.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title">Phone</h3>
+                            <p class="info-value">+92 300 000 0000</p>
+                            <p class="info-desc">Mon — Sat, 10am — 8pm PKT</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title">Location</h3>
+                            <p class="info-value">Lahore, Pakistan</p>
+                            <p class="info-desc">Available for shipping nationwide</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h3 class="info-title">Response Time</h3>
+                            <p class="info-value">Within 24 hours</p>
+                            <p class="info-desc">We respond to every inquiry personally</p>
+                        </div>
+                    </div>
+
+                    <div class="info-social">
+                        <h3 class="info-social-title">Follow Us</h3>
+                        <div class="info-social-links">
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                                    <circle cx="12" cy="12" r="5" />
+                                    <circle cx="17.5" cy="6.5" r="1.5" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M4 4l11.733 16h4.267l-11.733 -16h-4.267z" />
+                                    <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-label">FREQUENTLY ASKED</span>
+                <h2 class="section-title">Common Questions</h2>
+                <div class="title-underline"></div>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item reveal-up" data-delay="0">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How can I place an order?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can place an order by filling out the contact form above, sending us an email at
+                            orders@elane.com, or reaching out via our social media channels. We'll confirm your order
+                            and arrange delivery within 24 hours.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal-up" data-delay="100">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do you offer nationwide shipping?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We ship across all of Pakistan. Standard delivery takes 3-5 business days. Express
+                            delivery (1-2 days) is available for major cities.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal-up" data-delay="200">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What is your return policy?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We offer a 7-day return policy for unopened, sealed bottles. If your product arrives damaged,
+                            we provide a full replacement at no extra cost. Your satisfaction is guaranteed.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal-up" data-delay="300">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Is VELMONT suitable for all seasons?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>VELMONT is a versatile fragrance designed for year-round wear. Its citrus opening shines in
+                            warmer months, while the deep base notes make it equally commanding in cooler seasons.</p>
+                    </div>
+                </div>
+                <div class="faq-item reveal-up" data-delay="400">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do you offer wholesale or partnership opportunities?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! We welcome retail partnerships and wholesale inquiries. Please reach out via the
+                            contact form with "Wholesale & Partnerships" selected, and our team will respond promptly.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="footer-logo">ÈLANÈ</h3>
+                    <p class="footer-tagline">Refined. Sophisticated. Timeless.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="5" />
+                                <circle cx="17.5" cy="6.5" r="1.5" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M4 4l11.733 16h4.267l-11.733 -16h-4.267z" />
+                                <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">EXPLORE</h4>
+                    <a href="collection.html" class="footer-link">Collection</a>
+                    <a href="about.html" class="footer-link">Our Story</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">SUPPORT</h4>
+                    <a href="contact.html" class="footer-link">Shipping & Returns</a>
+                    <a href="contact.html" class="footer-link">FAQ</a>
+                    <a href="contact.html" class="footer-link">Privacy Policy</a>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">CONTACT</h4>
+                    <p class="footer-info">info@elane.com</p>
+                    <p class="footer-info">+92 300 000 0000</p>
+                    <p class="footer-info">Lahore, Pakistan</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 ÈLANÈ. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
