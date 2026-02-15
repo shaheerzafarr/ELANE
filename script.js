@@ -3,14 +3,35 @@
    ========================================= */
 
 // ---- Preloader ----
-window.addEventListener('load', () => {
+const hidePreloader = () => {
     const preloader = document.getElementById('preloader');
-    if (preloader) {
-        setTimeout(() => {
-            preloader.classList.add('hidden');
-        }, 1200);
+    if (preloader && !preloader.classList.contains('hidden')) {
+        preloader.classList.add('hidden');
     }
-});
+    // Force remove any stuck overflow hidden on body
+    document.body.style.overflow = '';
+    document.body.style.removeProperty('overflow');
+
+    // Ensure mobile menu is closed on load
+    const navLinksEl = document.getElementById('navLinks');
+    const hamburgerEl = document.getElementById('hamburger');
+    const overlayEl = document.getElementById('mobileOverlay');
+    if (navLinksEl) navLinksEl.classList.remove('active');
+    if (hamburgerEl) hamburgerEl.classList.remove('active');
+    if (overlayEl) overlayEl.classList.remove('active');
+};
+
+// Hide preloader after DOM is ready (don't wait for images)
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    setTimeout(hidePreloader, 500);
+} else {
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(hidePreloader, 1200);
+    });
+}
+
+// Fallback: always hide preloader after 3 seconds max
+setTimeout(hidePreloader, 3000);
 
 // ---- Custom Cursor ----
 const cursorDot = document.getElementById('cursorDot');
@@ -64,7 +85,6 @@ if (hamburger && navLinks) {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
         if (mobileOverlay) mobileOverlay.classList.toggle('active');
-        document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     };
 
     hamburger.addEventListener('click', toggleMenu);
@@ -112,6 +132,111 @@ window.addEventListener('scroll', () => {
         ticking = true;
     }
 });
+
+// ---- Hero Slider ----
+const heroSlides = document.querySelectorAll('.hero-slide');
+const heroDots = document.querySelectorAll('.hero-dot');
+let currentHeroSlide = 0;
+let heroSliderInterval;
+
+const showHeroSlide = (index) => {
+    heroSlides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+    });
+    heroDots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+    });
+    currentHeroSlide = index;
+};
+
+const nextHeroSlide = () => {
+    const next = (currentHeroSlide + 1) % heroSlides.length;
+    showHeroSlide(next);
+};
+
+const startHeroSlider = () => {
+    heroSliderInterval = setInterval(nextHeroSlide, 5000); // Change slide every 5 seconds
+};
+
+const resetHeroSlider = () => {
+    clearInterval(heroSliderInterval);
+    startHeroSlider();
+};
+
+// Dot navigation
+heroDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        showHeroSlide(index);
+        resetHeroSlider();
+    });
+});
+
+// Start auto-rotation
+if (heroSlides.length > 0) {
+    startHeroSlider();
+}
+
+// ---- Product Slider ----
+const productSliderTrack = document.getElementById('productSliderTrack');
+const productSliderPrev = document.getElementById('productSliderPrev');
+const productSliderNext = document.getElementById('productSliderNext');
+const productSliderProgress = document.getElementById('productSliderProgress');
+
+if (productSliderTrack && productSliderPrev && productSliderNext) {
+    let currentProductSlide = 0;
+    const totalProductSlides = document.querySelectorAll('.product-slide').length;
+
+    const getSlideWidth = () => {
+        const slide = document.querySelector('.product-slide');
+        if (!slide) return 280;
+        const styles = window.getComputedStyle(slide);
+        const width = slide.offsetWidth;
+        const marginRight = parseInt(styles.marginRight) || 0;
+        const gap = 48; // 3rem gap from CSS
+        return width + gap;
+    };
+
+    const updateProductSlider = () => {
+        const slideWidth = getSlideWidth();
+        productSliderTrack.scrollTo({
+            left: currentProductSlide * slideWidth,
+            behavior: 'smooth'
+        });
+
+        // Update progress bar
+        if (productSliderProgress) {
+            const progressBar = productSliderProgress.querySelector('.progress-bar');
+            const progressPercent = ((currentProductSlide + 1) / totalProductSlides) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+        }
+    };
+
+    productSliderNext.addEventListener('click', () => {
+        if (currentProductSlide < totalProductSlides - 1) {
+            currentProductSlide++;
+            updateProductSlider();
+        }
+    });
+
+    productSliderPrev.addEventListener('click', () => {
+        if (currentProductSlide > 0) {
+            currentProductSlide--;
+            updateProductSlider();
+        }
+    });
+
+    // Initialize progress
+    updateProductSlider();
+
+    // Update on window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            updateProductSlider();
+        }, 150);
+    });
+}
 
 // ---- Scroll Reveal Animations ----
 const revealObserver = new IntersectionObserver((entries) => {
